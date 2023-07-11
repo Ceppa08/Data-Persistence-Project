@@ -15,10 +15,7 @@ public class MenuUIHandler : MonoBehaviour
     {
         ScenesManager.Istance.playerName = inputText.text;
     }
-    public void StartNew()
-    {
-        SceneManager.LoadScene(1);
-    }
+    
 
     public void Exit()
     {
