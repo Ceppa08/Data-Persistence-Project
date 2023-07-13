@@ -99,13 +99,6 @@ public class ScenesManager : MonoBehaviour
         highscores.highscoreEntryList.Add(highscoreEntry);
 
         //Save updated Highscores
-        if (highscores.highscoreEntryList.Count > 10)
-        {
-            for (int h = highscores.highscoreEntryList.Count; h > 10; h--)
-            {
-                highscores.highscoreEntryList.RemoveAt(10);
-            }
-        }
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();

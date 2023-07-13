@@ -16,7 +16,7 @@ public class HighScoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-        /*string jsonString = PlayerPrefs.GetString("highscoreTable");
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
         //Sort entry list by Score
@@ -40,7 +40,7 @@ public class HighScoreTable : MonoBehaviour
             {
                 highscores.highscoreEntryList.RemoveAt(10);
             }
-        }*/
+        }
         
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
