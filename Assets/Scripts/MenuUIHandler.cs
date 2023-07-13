@@ -15,7 +15,7 @@ public class MenuUIHandler : MonoBehaviour
     {
         ScenesManager.Istance.playerName = inputText.text;
     }
-    
+
 
     public void Exit()
     {

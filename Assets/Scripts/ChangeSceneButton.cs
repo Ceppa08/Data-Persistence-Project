@@ -17,7 +17,7 @@ public class ChangeSceneButton : MonoBehaviour
         if (ScenesManager.Istance.playerName.Length > 0)
         {
             SceneManager.LoadScene(1);
-            
+
         }
         else
         {

@@ -19,29 +19,8 @@ public class HighScoreTable : MonoBehaviour
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-        //Sort entry list by Score
         
-            for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
-        {
-            for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
-            {
-                if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score)
-                {
-                    //Swap
-                    HighscoreEntry tmp = highscores.highscoreEntryList[i];
-                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
-                    highscores.highscoreEntryList[j] = tmp;
-                }
-            }
-        }
-        if (highscores.highscoreEntryList.Count > 10)
-        {
-            for (int h = highscores.highscoreEntryList.Count; h > 10; h--)
-            {
-                highscores.highscoreEntryList.RemoveAt(10);
-            }
-        }
-        
+
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
         {
@@ -85,12 +64,12 @@ public class HighScoreTable : MonoBehaviour
             entryTransform.Find("scoreText").GetComponent<Text>().color = Color.green;
             entryTransform.Find("nameText").GetComponent<Text>().color = Color.green;
         }
-        
-        
+
+
         transformList.Add(entryTransform);
     }
-    
-    
+
+
     private class Highscores
     {
         public List<HighscoreEntry> highscoreEntryList;
