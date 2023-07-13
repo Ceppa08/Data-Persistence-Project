@@ -13,7 +13,7 @@ public class MainManager : MonoBehaviour
     public Text ScoreText;
     public Text bestScoreText;
     public GameObject GameOverText;
-    
+
     private bool m_Started = false;
     private int m_Points;
     
@@ -75,13 +75,9 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
-
-            if (m_Points > ScenesManager.Istance.highScore)
-            {
-                ScenesManager.Istance.highScore = m_Points;
-                ScenesManager.Istance.highPlayerName = ScenesManager.Istance.playerName;
-                ScenesManager.Istance.SaveHighScore();
-            }
+        //add points and name to leaderboard
+        ScenesManager.Istance.AddHighscoreEntry(m_Points, ScenesManager.Istance.playerName);
+            
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
